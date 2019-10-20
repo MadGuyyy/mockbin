@@ -5,6 +5,7 @@ var sample = {
     status: 200,
     statusText: 'OK',
     httpVersion: 'HTTP/1.1',
+    path: 'test-slug',
     headers: [
       {
         name: 'Content-Type',
@@ -22,6 +23,7 @@ var sample = {
     status: 200,
     statusText: 'OK',
     httpVersion: 'HTTP/1.1',
+    path: 'test-slug',
     headers: [
       {
         name: 'Content-Type',
@@ -39,6 +41,7 @@ var sample = {
     status: 200,
     statusText: 'OK',
     httpVersion: 'HTTP/1.1',
+    path: 'test-slug',
     headers: [
       {
         name: 'Content-Type',
@@ -56,6 +59,7 @@ var sample = {
     status: 200,
     statusText: 'OK',
     httpVersion: 'HTTP/1.1',
+    path: 'test-slug',
     headers: [
       {
         name: 'Content-Type',
@@ -122,6 +126,7 @@ $(function () {
       status: '',
       statusText: '',
       httpVersion: 'HTTP/1.1',
+      path: '',
       headers: [],
       cookies: [],
       content: {
@@ -136,7 +141,7 @@ $(function () {
       $(this).parents('.form-group').addClass('has-error')
     })
 
-    var forms = [{form: 'status', parent: response}, {form: 'content', parent: response.content}]
+    var forms = [{form: 'status', parent: response}, {form: 'path', parent: response}, {form: 'content', parent: response.content}]
 
     forms.forEach(function (item) {
       $('form[name="' + item.form + '"] div.form-group:not(.pair) .form-control').each(function () {

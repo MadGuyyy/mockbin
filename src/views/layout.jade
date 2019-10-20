@@ -35,7 +35,7 @@ html
 
           div#navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
-              for link, name in [{name: 'Create Bin', href: '/bin/create'}, {name: 'Docs', href: 'https://github.com/Kong/mockbin/tree/master/docs'}, {name: 'Github', href: 'https://github.com/Kong/mockbin'}]
+              for link, name in [{name: 'Create Bin', href: '/bin/create'}, {name: 'List Bins', href: '/bin/list'}, {name: 'Docs', href: 'https://github.com/Kong/mockbin/tree/master/docs'}, {name: 'Github', href: 'https://github.com/Kong/mockbin'}]
                 li(class={active: req.originalUrl === link.href}): a(href= link.href)= link.name
 
     block content

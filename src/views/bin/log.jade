@@ -38,7 +38,7 @@ block content
             td.method
               +method(entry.request.method)
 
-            td= entry.request.url.slice(entry.request.url.indexOf('/bin/'))
+            td= entry.request.url.slice(entry.request.url.indexOf('/',8))
 
             td #{entry.request.bodySize / 1000} KB
 

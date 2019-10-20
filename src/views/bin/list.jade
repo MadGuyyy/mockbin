@@ -1,0 +1,39 @@
+extends ../layout.jade
+
+mixin method (method)
+  - var mapping = { GET: 'success', POST: 'primary', PUT: 'info', PATCH: 'warning' , DELETE: 'danger' }
+  - var className = mapping[method] ? mapping[method] : 'default'
+
+  span(class='label-#{className}').label= method
+
+block content
+  div(data-page="bin/list").container
+
+    h3 Bin List
+    
+    hr
+
+    div.alert.alert-warning.visible-xs
+      strong Warning &nbsp;
+      span Best viewed on a desktop screen, with minimum #[code 800px] width.
+
+    table.table.table-hover
+      thead
+        tr
+          th(width='40%') Path
+          th(width='30%') Type
+          th(width='10%') Status
+          th(width='10%') Date
+          th(width='10%').text-right Actions
+
+      tbody
+        for entry, id in data.raw.bin.entries
+          tr(data-id= id)
+            td.path= entry.path
+            td.status= entry.content.mimeType
+            td.status= entry.status
+            td.date= moment(entry.startedDateTime).fromNow()
+            td.action.text-right
+              div.btn-group.btn-group-sm
+                a.btn.btn-default(href='/bin/#{entry.path}/view'): i.fa.fa-eye
+

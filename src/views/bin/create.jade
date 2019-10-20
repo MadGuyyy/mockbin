@@ -7,7 +7,13 @@ block content
       div.panel-body
         div.row
           div.col-sm-6
-            form(name='status')
+            form(name='path')
+              h4 Path
+
+              div.form-group
+                input.form-control(type='text', name='path', value='test-slug', placeholder='test-slug', required='')
+
+            form.form-inline(name='status')
               h4 Status
 
               div.form-group
