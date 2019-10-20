@@ -35,5 +35,6 @@ block content
             td.date= moment(entry.startedDateTime).fromNow()
             td.action.text-right
               div.btn-group.btn-group-sm
-                a.btn.btn-default(href='/bin/#{entry.path}/view'): i.fa.fa-eye
+                a.btn.btn-default(href='/bin/#{entry.path}/log'): i.fa.fa-list
+                a.btn.btn-default(href='/bin/#{entry.path}/view'): i.fa.fa-info
 
