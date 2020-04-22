@@ -35,6 +35,8 @@ block content
             td.date= moment(entry.startedDateTime).fromNow()
             td.action.text-right
               div.btn-group.btn-group-sm
-                a.btn.btn-default(href='/bin/#{entry.path}/log'): i.fa.fa-list
-                a.btn.btn-default(href='/bin/#{entry.path}/view'): i.fa.fa-info
+                a.btn.btn-default(href='/bin/#{entry.path}/delete' title='Delete' onclick="return confirm('Delete bin?');"): i.fa.fa-trash
+                a.btn.btn-default(href='/bin/#{entry.path}/clear' title='Clear' onclick="return confirm('Clear bin?');"): i.fa.fa-refresh
+                a.btn.btn-default(href='/bin/#{entry.path}/view' title='Info'): i.fa.fa-info
+                a.btn.btn-default(href='/bin/#{entry.path}/log' title='Log'): i.fa.fa-list
 
