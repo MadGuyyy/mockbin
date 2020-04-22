@@ -24,7 +24,7 @@ block content
           th(width='30%') Type
           th(width='10%') Status
           th(width='10%') Date
-          th(width='10%').text-right Actions
+          th(width='180px').text-right Actions
 
       tbody
         for entry, id in data.raw.bin.entries
@@ -36,7 +36,7 @@ block content
             td.action.text-right
               div.btn-group.btn-group-sm
                 a.btn.btn-default(href='/bin/#{entry.path}/delete' title='Delete' onclick="return confirm('Delete bin?');"): i.fa.fa-trash
-                a.btn.btn-default(href='/bin/#{entry.path}/clear' title='Clear' onclick="return confirm('Clear bin?');"): i.fa.fa-refresh
+                a.btn.btn-default(href='/bin/#{entry.path}/clear' title='Clear' onclick="return confirm('Clear bin?');"): i.fa.fa-eraser
                 a.btn.btn-default(href='/bin/#{entry.path}/view' title='Info'): i.fa.fa-info
                 a.btn.btn-default(href='/bin/#{entry.path}/log' title='Log'): i.fa.fa-list
 

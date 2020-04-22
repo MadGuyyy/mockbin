@@ -46,7 +46,9 @@ block content
             td.ip= entry.clientIPAddress
             td.action.text-right
               div.btn-group.btn-group-sm
-                a.btn.btn-default(href='#entry-#{id}'): i.fa.fa-link
+                a.btn.btn-default(href='/bin/' + req.params.uuid + '/view/#{id}' title="Source" target="_blank"): i.fa.fa-code
+                a.btn.btn-default(href='/bin/' + req.params.uuid + '/view/#{id}' title='Download' download): i.fa.fa-download
+                a.btn.btn-default(href='/bin/' + req.params.uuid + '/delete/#{id}' title="Delete" onclick="return confirm('Delete request?');"): i.fa.fa-trash
                 button.btn.btn-default(data-id= id): i.fa.fa-chevron-down
 
           tr.data(id='entry-#{id}')
