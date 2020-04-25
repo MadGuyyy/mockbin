@@ -20,7 +20,7 @@ block content
 
           div(id='post').tab-pane.active.fade.in
             button(data-clipboard-target='#post-code').btn.btn-default.btn-xs.btn-clipboard #[i.fa.fa-copy] #[span Copy to Clipboard]
-            pre: code(id='#post-code')= data.raw.request.postData && data.raw.request.postData.text ? data.raw.request.postData.text : 'No body content was sent'
+            pre: code(id='#post-code')= (typeof data.raw.request.postData != "undefined" && data.raw.request.postData.text) ? data.raw.request.postData.text : 'No body content was sent'
 
     br
 
