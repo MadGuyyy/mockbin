@@ -15,12 +15,12 @@ block content
         div.tab-content
           for key in ['json', 'yaml', 'xml']
             div(id= key).tab-pane.active.fade.in
-              button(data-clipboard-target='#{key}-code').btn.btn-default.btn-xs.btn-clipboard #[i.fa.fa-copy] #[span Copy to Clipboard]
+              button(data-clipboard-target='##{key}-code').btn.btn-default.btn-xs.btn-clipboard #[i.fa.fa-copy] #[span Copy to Clipboard]
               pre: code(id='#{key}-code')= data[key]
 
           div(id='post').tab-pane.active.fade.in
             button(data-clipboard-target='#post-code').btn.btn-default.btn-xs.btn-clipboard #[i.fa.fa-copy] #[span Copy to Clipboard]
-            pre: code(id='#post-code')= (typeof data.raw.request != "undefined" && data.raw.request.postData.text) ? data.raw.request.postData.text : 'No body content was sent'
+            pre: code(id='post-code')= (typeof data.raw.request != "undefined" && data.raw.request.postData.text) ? data.raw.request.postData.text : 'No body content was sent'
 
     br
 
